@@ -3,15 +3,16 @@
 using namespace std;
 #define DEBUG
 //1d
-const int ROWS = 8;
-const int COLS = 7;
+const int ROWS = 5;
+const int COLS = 5;
 void FillRand(int arr[], const int n);
 void FillRand(double arr[], const int n);
 void FillRand(int arr[ROWS][COLS], const int m, const int n);
 
-void Print(int arr[], const int n);
-void Print(double arr[], const int n);
-void Print(int arr[ROWS][COLS], const int m, const int n);
+template<typename T>
+void Print(T arr[], const int n);
+template<typename T>
+void Print(T arr[ROWS][COLS], const int m, const int n);
 
 void Sort(int arr[ROWS][COLS], const int m, const int n);
 void Sort(int arr[], const int n);
@@ -25,7 +26,6 @@ double Sum(double arr[ROWS][COLS], const int m, const int n);
 int Avg(int arr[], const int n);
 double Avg(double arr[], const int n);
 double Avg(int arr[ROWS][COLS], const int m, const int n);
-double Avg(double arr[ROWS][COLS], const int m, const int n);
 
 int minValue(int arr[], const int n);
 double minValue(double arr[], const int n);
@@ -97,15 +97,8 @@ void FillRand(double arr[], const int n)
 		arr[i] /= 10;
 	}
 }
-void Print(int arr[], const int n)
-{
-	for (int i = 0; i < n; i++)
-	{
-		cout << arr[i] << "\t";
-	}
-	cout << endl;
-}
-void Print(double arr[], const int n)
+template<typename T>
+void Print(T arr[], const int n)
 {
 	for (int i = 0; i < n; i++)
 	{
@@ -232,7 +225,8 @@ void FillRand(int arr[ROWS][COLS], const int m, const int n)
 		}
 	}
 }
-void Print(int arr[ROWS][COLS], const int m, const int n)
+template<typename T>
+void Print(T arr[ROWS][COLS], const int m, const int n)
 {
 	for (int i = 0; i < m; i++)
 	{
