@@ -1,4 +1,5 @@
-#include"prot_func.h"
+#include"Function.h"
+#include"Functions.cpp"
 
 void main()
 {
